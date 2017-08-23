@@ -168,7 +168,7 @@ func (r *RobotsData) FindGroup(agent string) (ret *Group) {
 		prefixLen = 1
 	}
 	for a, g := range r.groups {
-		if a != "*" && strings.HasPrefix(agent, a) {
+		if a != "*" && strings.Contains(a, agent) {
 			if l := len(a); l > prefixLen {
 				prefixLen = l
 				ret = g
